@@ -94,6 +94,9 @@ d3.csv('data/man.csv', function(file) {
     var sunday = [];
 
     // Loop through the columns (datetimes).
+    // oh my fucking god he's a lunatic LOL he's pushing each datehour into a date column instead of starting them off as separate rows
+    // I might be slightly arroused right now
+    // we won't need this unless we go do historical subways
     for (i = 0; i < 168; i++) {
       if (Math.floor(i/24) == 0) monday.push(parseInt(row[i]));
       if (Math.floor(i/24) == 1) tuesday.push(parseInt(row[i]));
@@ -178,6 +181,7 @@ function getPopulationGraph(container, ntaid, day) {
                                    .attr("height", height + offsetY*2 + 10);
 
   // Take the min and max for the whole week and make it the Y-axis range.
+  // we're not going to need this because we're going to have a fixed y axis lol
   var max = data[ntaid]["max"];
   var min = data[ntaid]["min"];
   var dayData = data[ntaid][day].slice(0);
